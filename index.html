@@ -1,9 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css" media="screen" >
+<link rel="stylesheet" href="stylePrint.css" media="print">
 </head>
+
 <body>
+<header>
+<div class="header">
+  <img src="KCheader.png" alt="KC Pottery Club" class="image" style="width:100%">
+</div>
+</header>
+
+<div id="navbar">
+  <a class="active" href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="https://aapa.info/">AAPA</a>
+  <a href="contact.html"> CONTACT US</a>
+</div>
+
+
+  <div class="container">
+  <img src="index2.png" alt="A place for local artists" class="image" >
+  <div class="middle">
+    <div class="text">Open to local artists in the Kansas City area</div>
+  </div>
+</div>
+
+<div class="rowIndex">
+  <div class="column">
+    <h4>Cultivate your passion</h4>
+    <p>Love to make pottery but don't have a proper studio?
+    No problem. </p>
+  </div>
+  <div class="column">
+    <img src="claypot.png" class= "center_image">
+  </div>
+  <div class="column" >
+    <h4>Learn new skills</h4>
+    <p>Get mentored by some of the best ceramicists in the Kansas City metro area.</p>
+  </div>
+</div>
+
+
+<div class="row" style="background-color: #E9DBCF;">
+  <div class="columnIndex">
+    <iframe width="100% !important" height="100% !important"
+src="https://www.youtube.com/embed/PUAwDPUNyrs">
+</iframe>
+  </div>
+  <div class="columnIndex">
+    <h4>Refine your technique</h4>
+    <p>Take part in weekly classes for in-depth tutorials on wheel
+    throwing, trimming, glazing, and more.</p>
+    <p> Classes are held Monday, Tuesday, and Thursday nights </p>
+  </div>
+</div>
+
+&nbsp
+<div class="slideshow-container">
+
+<div class="mySlides fadeSlide">
+  <img src="cropslide01.png" style="width:100%">
+</div>
+
+<div class="mySlides fadeSlide">
+  <img src="cropslide02.png" style="width:100%">
+</div>
+
+<div class="mySlides fadeSlide">
+  <img src="cropslide03.png" style="width:100%">
+</div>
+
+<a class="prevSlide" onclick="plusSlides(-1)">&#10094;</a>
+<a class="nextSlide" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div class="row" style="background-color:#000; color: #fff;">
+  <div class = "footer">
+  <div class="column">
+    <img src="KCfooter.png" alt="Pottery Club Logo" class="image" style="width:150px; height: 150px;">
+    </div>
+  <div class="column">
+    <p style="font-size: 15px;">This site was created as part of the Web Development I course at
+       Northwest Missouri State University and was developed to learn and enhance the concepts within that course.  It is not intended for public use.  </p>
+    </div>
+  <div class="column">
+    <p> Contact us </p>
+    <p><a href="mailto:kcpotteryclub@gmail.com"> Email: KCPotteryClub@gmail.com</a> </p>
+    <p> Phone #:<a href="tel:5554280940"> 816-123-4567<a></p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dotSlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
 
 </body>
 </html>
